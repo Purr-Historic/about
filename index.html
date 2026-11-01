@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>캐릭터 진(眞) 각성 | 시스템 브레이커</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <!-- 현재 VS Code 구조에 맞춰 assets 폴더 경로로 연결 -->
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+    <!-- 01. 던파 진각성 인게임 풀스크린 UI -->
+    <div class="awakening-window">
+        <!-- 상단 바 -->
+        <div class="window-header">
+            <span class="header-title">캐릭터 진(眞) 각성</span>
+            <a href="https://purr-historic.github.io/portfolio/" class="close-btn">✕ 포트폴리오로 이동하기</a>
+        </div>
+
+        <!-- 메인 바디 -->
+        <div class="window-body">
+            <!-- 좌측: 전신 인물 일러스트 영역 -->
+            <div class="hero-showcase">
+                <div class="bg-slash"></div>
+                <!-- 현재 폴더명 imgaes 에 맞춘 경로 -->
+                <img src="images/my_character.png" alt="용사 일러스트" class="hero-illust" />
+            </div>
+
+            <!-- 우측: 정보 및 프리뷰 대시보드 -->
+            <div class="hero-dashboard">
+                <div class="class-emblem">
+                    <div class="emblem-icon">🛡️</div>
+                    <h2>진(眞) 시스템 브레이커</h2>
+                    <span class="eng-title">Neo: Pipeline Breaker</span>
+                </div>
+
+                <div class="class-desc">
+                    <span>◆</span> 포맷된 기억, 감각만 남은 야매 장인 <span>◆</span>
+                </div>
+
+                <!-- 어두운 내부 프레임 박스 (원작 UI 동일 구조) -->
+                <div class="info-frame">
+                    <!-- 작은 네모: 포트폴리오 무음 프리뷰 비디오 -->
+                    <div class="preview-box">
+                        <video id="mini-preview" autoplay muted loop playsinline>
+                            <source src="videos/video1.mp4" type="video/mp4" />
+                        </video>
+                        <div class="preview-tag">MIGNON LOUNGE PREVIEW</div>
+                    </div>
+
+                    <!-- 스킬 아이콘 3개 -->
+                    <div class="skill-slots">
+                        <div class="slot" data-skill="0" title="C++ / DirectX 바닥 구현">🎮</div>
+                        <div class="slot" data-skill="1" title="ComfyUI-ZLUDA 개척">⚡</div>
+                        <div class="slot" data-skill="2" title="Thermalright 120SE 쿨링">❄️</div>
+                    </div>
+
+                    <!-- 스킬 설명 출력 네모칸 -->
+                    <div id="skill-desc-box" class="skill-desc-box">
+                        <h4 id="skill-title">스킬 아이콘을 클릭하여 설명을 볼 수 있습니다.</h4>
+                        <p id="skill-text">각 아이콘을 누르면 보유 중인 핵심 엔지니어링 패시브 및 각성기 정보가 여기에 표시됩니다.</p>
+                    </div>
+                </div>
+
+                <!-- 하단 각성 하기 버튼 -->
+                <div class="action-row">
+                    <button id="awaken-trigger-btn" class="dnf-awaken-btn">각 성 하 기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02. 각성하기 누르면 튀어나오는 풀스크린 비디오 모달 -->
+    <div id="cinema-modal" class="hidden">
+        <video id="full-awakening-video" playsinline>
+            <source src="videos/awakening.mp4" type="video/mp4" />
+        </video>
+        <button id="modal-close-btn" class="modal-skip-btn">건너뛰기 ⏭</button>
+    </div>
+
+    <!-- 현재 VS Code 구조에 맞춰 assets 폴더 경로로 연결 -->
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
