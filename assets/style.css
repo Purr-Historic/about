@@ -303,3 +303,136 @@ body {
     background: #8a2412;
     border-color: #ffd700;
 }
+
+/* ===================================================
+   모바일 / 태블릿 반응형 대응 (화면 폭 850px 이하)
+=================================================== */
+@media screen and (max-width: 850px) {
+
+    /* 1. 전체 화면을 꽉 채우되 내용이 길어지면 세로 스크롤 허용 */
+    body {
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .awakening-window {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        border: none;
+        border-radius: 0;
+    }
+
+    /* 2. 좌우 2열 배치를 상하 세로 1열로 변경 */
+    .window-body {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* 3. 상단: 캐릭터 일러스트 영역 축소 및 중앙 정렬 */
+    .hero-showcase {
+        width: 100%;
+        height: 380px;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    }
+
+    .hero-illust {
+        height: 100%;
+        max-width: 90%;
+        object-position: center;
+    }
+
+    .bg-slash {
+        width: 200%;
+        left: -50%;
+        top: 25%;
+        transform: rotate(-20deg);
+    }
+
+    /* 4. 하단: 정보 대시보드 여백 압축 */
+    .hero-dashboard {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem 1rem 3rem;
+        background: rgba(8, 6, 12, 0.85);
+    }
+
+    .emblem-icon {
+        font-size: 2rem;
+    }
+
+    .class-emblem h2 {
+        font-size: 1.6rem;
+    }
+
+    .eng-title {
+        font-size: 0.8rem;
+    }
+
+    .class-desc {
+        font-size: 0.8rem;
+        margin: 0.5rem 0 1rem;
+        padding: 0 0.5rem;
+    }
+
+    /* 5. 내부 프리뷰 프레임 및 비디오 최적화 */
+    .info-frame {
+        width: 100%;
+        max-width: 100%;
+        padding: 0.8rem;
+    }
+
+    .preview-box {
+        max-height: 200px;
+    }
+
+    /* 6. 스킬 슬롯 및 설명 박스 크기 조절 */
+    .skill-slots {
+        gap: 0.8rem;
+        margin: 1rem 0;
+    }
+
+    .slot {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .skill-desc-box {
+        min-height: 80px;
+        padding: 0.8rem 1rem;
+    }
+
+    #skill-title {
+        font-size: 0.88rem;
+    }
+
+    #skill-text {
+        font-size: 0.78rem;
+    }
+
+    /* 7. 각성하기 버튼 */
+    .action-row {
+        margin-top: 1.2rem;
+        width: 100%;
+    }
+
+    .dnf-awaken-btn {
+        width: 90%;
+        max-width: 320px;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+    }
+
+    /* 8. 풀스크린 모달 닫기 버튼 위치 모바일 보정 */
+    .modal-skip-btn {
+        bottom: 25px;
+        right: 20px;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
